@@ -1,2 +1,43 @@
-# order-summary-component
-6) Order summary component challenge - Frontend Mentor 
+# Frontend Mentor - Order summary card solution
+
+This is a solution to the [Order summary card challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+
+## Table of contents
+
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+- [Author](#author)
+
+## Overview
+
+### The challenge
+
+Users should be able to:
+
+- See hover states for interactive elements
+
+### Screenshot
+
+![](./screenshot.png)
+
+### Links
+
+- Solution URL: [Link](https://www.frontendmentor.io/solutions/order-summary-component-using-mobile-first-approach-and-css-grid-c-HmAvKIr)
+- Live Site URL: [Link](https://li-bee.github.io/order-summary-component/)
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- CSS Grid
+- Mobile-first workflow
+
+## Author
+
+- Frontend Mentor - [@LiBee](https://www.frontendmentor.io/profile/Li-Bee)

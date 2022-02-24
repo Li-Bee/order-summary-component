@@ -304,6 +304,11 @@ body {
     font-size: 1rem;
     line-height: 1.3125;
   }
+  
+  .plan-price {
+    font-size: 1rem;
+    line-height: 1.3125;
+  }
 
   .plan-link,
   .plan-link:link,

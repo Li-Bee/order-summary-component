@@ -70,265 +70,132 @@ h6 {
 }
 
 /* ************** */
-/* BACKGROUND */
+/* BACKGROUND PATTERNS AND BODY FORMATTING */
 /* ************** */
 
-/* MOBILE FIRST - 375px */
-
 body {
-  background-image: url(../images/pattern-background-mobile.svg);
-  background-color: #e0e8ff;
-  background-repeat: no-repeat;
-  /* not cover as dont want to cover entire element */
-  background-size: contain;
-  /* make sure the entire element is always covered */
-  background-attachment: fixed;
+  /* background color and patterns */
+  background-color: #19a1ae;
+  background-image: url(../images/bg-pattern-top.svg),
+    url(../images/bg-pattern-bottom.svg);
+  background-repeat: no-repeat, no-repeat;
+  /* needs to be cover so actual size otherwise will fit container and background position wont work */
+  background-size: cover, cover;
+  background-position: right 43vw bottom 64vh, left 46vw top 57vh;
 
-  font-family: "Red Hat Display", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  color: #717fa6;
-
-  /* center the component on screen */
+  /* center the card on screen */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
 
-/* DESKTOP - 400px / 25rem */
+  /* style defaults */
+  color: #2e3349;
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 400;
+}
 
 @media (min-width: 25rem) {
   body {
-    background-image: url(../images/pattern-background-desktop.svg);
+    background-position: right 45vw bottom 30vh, left 45vw top 37vh;
   }
 }
 
 /* ************** */
-/* CARD */
+/* PROFILE CARD */
 /* ************** */
 
-/* MOBILE FIRST - 375px */
+/* MOBILE FIRST - 375PX */
 
 .article-wrapper {
-  /* 327 width / 375 mobile */
-  width: 87.2%;
-  margin: 0 auto;
+  /* 326 / 375 mobile */
+  width: 86.9%;
   background-color: #fff;
-  border-radius: 20px;
+  box-shadow: 0px 50px 100px -20px rgba(8, 70, 94, 0.504835);
+  border-radius: 15px;
+  /* hides overflow of bubble picture */
   overflow: hidden;
 }
 
-.article-content {
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
+/* break point at 400px - maximum article picture header size */
+@media (min-width: 25rem) {
+  .article-wrapper {
+    width: 21.875rem;
+  }
 }
 
-.article-heading {
-  margin-bottom: 1rem;
-  color: #1f2e55;
-  font-weight: 900;
-  font-size: 1.375rem;
+.avatar {
+  /* set to relative to get z-index to work */
+  position: relative;
+  z-index: 1;
+  /* removed the slight green line */
+  background-color: #fff;
+  border: 5px solid #fff;
+  margin: 0 auto;
+  border-radius: 50%;
+  margin-top: -3.625rem;
+  /* minus 5px for the border */
+  margin-bottom: 1.1875rem;
 }
 
 .article-text {
-  font-size: 0.9375rem;
-  line-height: 1.67;
-  width: 82%;
-  margin: 0 auto;
-}
-
-.plan-details {
-  display: grid;
-  grid-template-columns: 3rem 5.0625rem 1fr;
-  column-gap: 1.25rem;
-  /* need row to set the positions over rows */
-  grid-template-rows: 1fr 1fr;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-  margin-bottom: 1.5rem;
-  background-color: #f7f9ff;
-  border-radius: 11px;
-  padding: 1rem;
-}
-
-.music-icon {
-  grid-row: 1/-1;
-  align-self: center;
-  justify-self: start;
-}
-
-.plan-term {
-  align-self: center;
-  font-weight: 900;
-  color: #1f2e55;
-  font-size: 0.875rem;
-  line-height: 1.35;
-}
-
-.plan-price {
-  align-self: center;
-  grid-column: 2/3;
-  grid-row: 2/3;
-  font-size: 0.875rem;
-  line-height: 1.35;
-}
-
-.plan-link,
-.plan-link:link,
-.plan-link:visited {
-  grid-row: 1/-1;
-  align-self: center;
-  justify-self: end;
-  text-decoration: none;
-  font-size: 0.8125rem;
-  font-weight: 700;
-  line-height: 1.32;
-  color: #382ae1;
-  text-decoration: underline;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.plan-link:hover,
-.plan-link:focus,
-.plan-link:active {
-  color: #766cf1;
-  text-decoration: none;
-}
-
-.btn-wrapper {
-  /* center the anchor links */
+  padding-left: 6rem;
+  padding-right: 6rem;
   text-align: center;
+  padding-bottom: 1.6875rem;
+  border-bottom: 1px solid #e8e9ec;
 }
 
-/* LVHFA */
-
-.btn,
-.btn:link,
-.btn:visited {
-  /* set as inline-block so padding and height work */
-  display: inline-block;
-  margin-bottom: 1.5rem;
-  background-color: #382ae1;
-  /* offset-x | offset-y | blur-radius | (spread-radius) | color */
-  box-shadow: 0px 20px 20px rgba(56, 42, 225, 0.190291);
-  padding: 0.85rem 4.05rem;
-  border-radius: 11px;
-  text-decoration: none;
-  color: #fff;
-  font-weight: 900;
-  font-size: 0.9375rem;
-  cursor: pointer;
-  transition: all 0.3s;
+.article-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.22;
 }
 
-.btn:hover,
-.btn:focus,
-.btn:active {
-  background-color: #766cf1;
+.age {
+  color: #6b7082;
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin-left: 0.53125rem;
+  line-height: 1.22;
 }
 
-.cancel,
-.cancel:link,
-.cancel:visited {
-  display: inline-block;
-  margin-bottom: 2rem;
-  font-weight: 900;
-  text-decoration: none;
-  font-size: 0.9375rem;
-  line-height: 1.32;
-  color: #717fa6;
-  cursor: pointer;
-  transition: all 0.3s;
+.location {
+  color: #6b7082;
+  font-size: 0.875rem;
+  line-height: 1.21;
 }
 
-.cancel:hover,
-.cancel:focus,
-.cancel:active {
-  color: #1f2e55;
+.article-stats {
+  list-style: none;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 2.56rem;
 }
 
-/* IN BETWEEN DESKTOP AND MOBILE - 416px / 26rem */
-
-@media (min-width: 26rem) {
-  .article-wrapper {
-    width: 95%;
-  }
-
-  .article-text {
-    width: 80%;
-  }
-
-  .btn,
-  .btn:link,
-  .btn:visited {
-    padding: 0.85rem 6.3rem;
-  }
+.stats-number {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.22;
+  margin-bottom: 0.5625rem;
 }
 
-/* DESKTOP - 400px / 25rem */
+.stats-text {
+  font-size: 0.625rem;
+  color: #6b7082;
+  letter-spacing: 1.5px;
+  line-height: 1.2;
+}
 
-@media (min-width: 29rem) {
-  .article-wrapper {
-    width: 28.125rem;
-  }
+.stat-end {
+  margin-right: 0.625rem;
+}
 
-  .article-content {
-    margin-top: 2.8125rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .article-heading {
-    margin-bottom: 1.0625rem;
-    font-size: 1.75rem;
-    line-height: 1.32;
-  }
-
-  .article-text {
-    font-size: 1rem;
-    line-height: 1.62;
-    width: 78%;
-  }
-
-  .plan-details {
-    grid-template-columns: 3rem 5.75rem 1fr;
-    margin-left: 3rem;
-    margin-right: 3rem;
-    margin-bottom: 2rem;
-    padding: 1.5625rem;
-  }
-
-  .plan-term {
-    font-size: 1rem;
-    line-height: 1.3125;
-  }
-  
-  .plan-price {
-    font-size: 1rem;
-    line-height: 1.3125;
-  }
-
-  .plan-link,
-  .plan-link:link,
-  .plan-link:visited {
-    font-size: 0.875rem;
-    line-height: 1.35;
-  }
-
-  .btn,
-  .btn:link,
-  .btn:visited {
-    padding: 0.85rem 6.4rem;
-    margin-bottom: 2rem;
-    line-height: 1.33;
-  }
-
-  .cancel,
-  .cancel:link,
-  .cancel:visited {
-    margin-bottom: 3rem;
+@media (min-width: 25rem) {
+  .stat-end {
+    margin-right: 0.4375rem;
   }
 }
 
@@ -336,12 +203,11 @@ body {
 /* FOOTER */
 /* ************** */
 
-/* mobile first - 375px */
-
 .attribution {
   font-size: 11px;
   text-align: center;
 }
+
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
